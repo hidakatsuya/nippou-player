@@ -1,0 +1,5 @@
+app/dist/**
+app/electron.js
+test/unit/coverage/**
+test/unit/*.js
+test/e2e/*.js
