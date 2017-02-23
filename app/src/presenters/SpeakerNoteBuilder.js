@@ -1,18 +1,19 @@
 export default class SpeakerNoteBuilder {
-  static build (nippou) {
-    return (new this(nippou)).build()
+  static build ({ title, article }) {
+    return (new this(title, article)).build()
   }
 
-  constructor (nippou) {
-    this.nippou = nippou
+  constructor (title, article) {
+    this.title = title
+    this.article = article
   }
 
   build () {
-    return `# [${this.nippou.title}]。\n\n${this.formatArticle()}`
+    return `# [${this.title}]。\n\n${this.formatArticle()}`
   }
 
   formatArticle () {
-    let article = this.nippou.article
+    let article = this.article
 
     article = this.formatEsaSyntax(article)
     article = this.formatMarkdownSyntax(article)
