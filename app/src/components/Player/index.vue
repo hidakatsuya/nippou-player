@@ -45,7 +45,7 @@
     },
     data () {
       return {
-        loader: new NippouLoader(),
+        loader: new NippouLoader(setting),
         date: moment().subtract(1, 'days').toDate(),
         items: [],
         activeItem: null

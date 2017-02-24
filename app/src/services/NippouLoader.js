@@ -1,21 +1,21 @@
 import axios from 'axios'
-import setting from '../stores/Setting'
 import Nippou from '../models/Nippou'
 import PathFormatter from '../presenters/PathFormatter'
 
 export default class NippouLoader {
-  constructor () {
+  constructor ({ authorizationKey, nippouPath }) {
+    this.nippouPath = nippouPath
     this.loading = false
     this.client = axios.create({
       baseURL: 'https://api.esa.io',
       headers: {
-        common: { 'Authorization': `Bearer ${setting.authorizationKey}` }
+        common: { 'Authorization': `Bearer ${authorizationKey}` }
       }
     })
   }
 
   load (date) {
-    const pathFormatter = new PathFormatter(setting.nippouPath)
+    const pathFormatter = new PathFormatter(this.nippouPath)
     const path = pathFormatter.format(date)
 
     this.loading = true
