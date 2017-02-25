@@ -4,7 +4,7 @@
     <div class="toolbar-actions">
       <router-link :to="{ name: 'player' }" tag="button" class="btn btn-default">
         <span class="icon icon-left"></span>
-      </button>
+      </router-link>
     </div>
   </header>
 </template>
