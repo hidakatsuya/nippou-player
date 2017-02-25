@@ -1,9 +1,9 @@
 <style>
   .fade-enter-active {
-    transition: opacity .2s
+    transition: opacity .2s;
   }
   .fade-enter {
-    opacity: 0
+    opacity: 0;
   }
   .v-spinner {
     margin: auto;
