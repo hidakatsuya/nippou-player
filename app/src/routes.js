@@ -10,6 +10,11 @@ export default [
     component: require('components/Setting/index.vue')
   },
   {
+    path: '/about',
+    name: 'about',
+    component: require('components/About/index.vue')
+  },
+  {
     path: '*',
     redirect: '/'
   }

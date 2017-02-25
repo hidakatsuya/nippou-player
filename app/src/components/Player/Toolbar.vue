@@ -23,7 +23,10 @@
       </div>
       <router-link :to="{ name: 'setting' }" tag="button" class="btn btn-default">
         <span class="icon icon-cog"></span>
-      </button>
+      </router-link>
+      <router-link :to="{ name: 'about' }" tag="button" class="btn btn-default pull-right">
+        <span class="icon icon-info-circled"></span>
+      </router-link>
     </div>
   </header>
 </template>
