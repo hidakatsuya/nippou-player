@@ -1,4 +1,4 @@
-# NIPPOU Player
+# NIPPOU Player for esa.io
 
 [![Build Status](https://travis-ci.org/hidakatsuya/nippou-player.svg?branch=master)](https://travis-ci.org/hidakatsuya/nippou-player)
 
