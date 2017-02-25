@@ -6,7 +6,10 @@
     opacity: 0
   }
   .v-spinner {
-    margin: 150px auto 0 auto;
+    margin: auto;
+  }
+  .window-content {
+    height: 100%;
   }
 </style>
 

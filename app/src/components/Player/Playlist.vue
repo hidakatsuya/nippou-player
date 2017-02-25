@@ -15,9 +15,9 @@
   }
   .not-found {
     text-align: center;
-    padding-top: 150px;
     color: #bbb;
     font-size: 11px;
+    margin: auto;
   }
 </style>
 
