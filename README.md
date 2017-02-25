@@ -1,5 +1,7 @@
 # NIPPOU Player
 
+[![Build Status](https://travis-ci.org/hidakatsuya/nippou-player.svg?branch=master)](https://travis-ci.org/hidakatsuya/nippou-player)
+
 A client for playing NIPPOU in [esa.io](https://esa.io).
 
 ## Development
