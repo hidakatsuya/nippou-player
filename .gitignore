@@ -1,4 +1,3 @@
-.DS_Store
 app/dist/index.html
 app/dist/main.js
 app/dist/build.js
@@ -11,5 +10,4 @@ coverage
 node_modules/
 npm-debug.log
 npm-debug.log.*
-thumbs.db
 !.gitkeep
