@@ -1,8 +1,4 @@
-<style src="./vendor/photon/css/photon.min.css">
-  html {
-    -webkit-app-region: drag;
-  }
-</style>
+<style src="./vendor/photon/css/photon.min.css"></style>
 
 <template>
   <router-view></router-view>
