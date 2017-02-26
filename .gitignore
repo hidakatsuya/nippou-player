@@ -1,11 +1,14 @@
 .DS_Store
 app/dist/index.html
+app/dist/main.js
 app/dist/build.js
-app/dist/styles.css
 app/dist/fonts/
+app/dist/imgs/
+app/dist/renderer.js
+app/dist/styles.css
 builds/*
 coverage
-node_modules
+node_modules/
 npm-debug.log
 npm-debug.log.*
 thumbs.db

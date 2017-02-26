@@ -32,6 +32,6 @@ export default class SpeakerNoteBuilder {
 
   formatEsaSyntax (article) {
     return article
-      .replace(/\[#(\d+): .+\/([^\/]+)\]\(.+?\)/g, '[Post#$1:$2]')
+      .replace(/\[#(\d+): .+\/([^/]+)\]\(.+?\)/g, '[Post#$1:$2]')
   }
 }

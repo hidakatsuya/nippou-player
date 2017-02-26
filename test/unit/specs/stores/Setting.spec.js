@@ -1,4 +1,4 @@
-import setting from 'src/stores/Setting'
+import setting from 'renderer/stores/Setting'
 
 describe('setting', () => {
   it('constructor', () => {
