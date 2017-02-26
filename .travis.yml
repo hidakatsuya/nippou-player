@@ -4,6 +4,7 @@ cache: yarn
 node_js:
   - "node"
 script:
+  - npm run lint
   - npm test
 before_install:
   - export DISPLAY=:99.0
