@@ -20,7 +20,7 @@
     <div class="window-content">
       <div class="pane padded-more">
         <img class="app-logo" src="./assets/logo.png" />
-        <div class="app-name">Nippou Player</div>
+        <div class="app-name">{{ productName }}</div>
         <div class="app-version">{{ version }}</div>
       </div>
     </div>
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-  import { version } from '../../../../../package'
+  import { productName, version } from '../../../../package'
   import Toolbar from './Toolbar'
 
   export default {
@@ -38,6 +38,9 @@
     computed: {
       version () {
         return version
+      },
+      productName () {
+        return productName
       }
     }
   }
