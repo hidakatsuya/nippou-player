@@ -1,7 +1,8 @@
 {
   "name": "nippou-player",
+  "version": "0.0.1",
   "productName": "Nippou Player for esa.io",
-  "description": "A client for playing NIPPOU in esa.io",
+  "description": "A client for playing NIPPOU in esa.io.",
   "main": "./dist/main.js",
   "dependencies": {
     "axios": "^0.15.3",

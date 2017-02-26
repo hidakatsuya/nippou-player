@@ -1,9 +1,6 @@
 {
   "name": "nippou-player",
-  "productName": "Nippou Player for esa.io",
-  "version": "0.0.1",
-  "description": "A client for playing NIPPOU in esa.io",
-  "main": "app/electron.js",
+  "version": "0.0.0",
   "author": "Katsuya HIDAKA <hidakatsuya@gmail.com>",
   "scripts": {
     "build": "node tasks/release.js",
