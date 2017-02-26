@@ -1,4 +1,4 @@
-import PathFormatter from 'src/presenters/PathFormatter'
+import PathFormatter from 'renderer/presenters/PathFormatter'
 
 describe('PathFormatter', () => {
   const formatter = new PathFormatter('in:日報/YYYY/MM/DD')

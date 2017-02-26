@@ -1,5 +1,5 @@
 import moment from 'moment'
-import NippouLoader from 'src/services/NippouLoader'
+import NippouLoader from 'renderer/services/NippouLoader'
 import MockAdapter from 'axios-mock-adapter'
 
 describe('NippouLoader', () => {

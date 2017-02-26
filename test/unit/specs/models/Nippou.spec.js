@@ -1,4 +1,4 @@
-import Nippou from 'src/models/Nippou'
+import Nippou from 'renderer/models/Nippou'
 
 describe('Nippou', () => {
   const nippou = new Nippou({

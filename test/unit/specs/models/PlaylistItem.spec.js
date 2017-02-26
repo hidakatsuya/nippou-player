@@ -1,4 +1,4 @@
-import PlaylistItem from 'src/models/PlaylistItem'
+import PlaylistItem from 'renderer/models/PlaylistItem'
 
 describe('PlaylistItem', () => {
   let item = null

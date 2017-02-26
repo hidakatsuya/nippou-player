@@ -28,7 +28,7 @@
 </template>
 
 <script>
-  import { version } from '../../../../package'
+  import { version } from '../../../../../package'
   import Toolbar from './Toolbar'
 
   export default {

@@ -1,4 +1,4 @@
-import SpeakerNoteBuilder from 'src/presenters/SpeakerNoteBuilder'
+import SpeakerNoteBuilder from 'renderer/presenters/SpeakerNoteBuilder'
 
 describe('SpeakerNoteBuilder', () => {
   const builder = new SpeakerNoteBuilder('title', '[aaa](https://www.example.com)')
