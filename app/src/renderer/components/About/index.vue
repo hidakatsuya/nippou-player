@@ -3,14 +3,16 @@
     text-align: center;
   }
   .app-logo {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
   .app-name {
-    font-weight: bold;
+    margin-top: 10px;
   }
   .app-version {
     color: #aaa;
+    font-size: .9em;
+    margin-top: 10px;
   }
 </style>
 
