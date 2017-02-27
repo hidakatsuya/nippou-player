@@ -1,5 +1,5 @@
 <style>
-  .pane {
+  .about {
     text-align: center;
   }
   .app-logo {
@@ -18,7 +18,7 @@
   <div class="window">
     <toolbar />
     <div class="window-content">
-      <div class="pane padded-more">
+      <div class="about pane padded-more">
         <img class="app-logo" src="./assets/logo.png" />
         <div class="app-name">{{ productName }}</div>
         <div class="app-version">{{ version }}</div>
