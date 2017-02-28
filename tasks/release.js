@@ -2,6 +2,9 @@
 
 const exec = require('child_process').exec
 const packager = require('electron-packager')
+const archiver = require('archiver')
+const fs = require('fs')
+const path = require('path')
 
 if (process.env.PLATFORM_TARGET === 'clean') {
   require('del').sync(['builds/*', '!.gitkeep'])
@@ -33,9 +36,25 @@ function build () {
       console.error(err)
     } else {
       console.log('Build(s) successful!')
-      console.log(appPaths)
 
+      console.log('\x1b[34mArchiving built app(s)...\n\x1b[0m')
+      archive(appPaths)
+      console.log('Archive(s) successful!')
+
+      console.log(appPaths)
       console.log('\n\x1b[34mDONE\n\x1b[0m')
     }
+  })
+}
+
+function archive (appPaths) {
+  appPaths.forEach(appPath => {
+    let dest = fs.createWriteStream(`${appPath}.zip`)
+    let zipper = archiver('zip')
+
+    zipper.on('error', e => { throw e })
+    zipper.pipe(dest)
+    zipper.directory(appPath, path.basename(appPath))
+    zipper.finalize()
   })
 }
