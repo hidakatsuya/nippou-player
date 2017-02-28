@@ -23,9 +23,9 @@ deploy:
   api_key:
     secure: rTEPNcX0XXpwP9G8udaBZoBwQRjze/NndA1rq4s92DPMcaQebOF75U398VRvcLouPuPftJw/ORgvanNztfya+TO7yEOWnpYx31z149eY2X1RDVgzXLVMwdaDnPZKKmYIeOEbsLo9fbpYRM8ERitlyvLHtT4G7UZYXZJliFXNEfJGDsIG5x0bRL7knAOVh2INOy7rqacLksA07LPGYwGF9ZwsnI3Gv/JkV0Ch83g59w/b8Hevk7kXXGtQ2KEdoIZT51zXX+3vFksHrRArncsh/Ja6AuEVc1XZzLwgKx84UThkgd3f7lUhzoLOih7x2u5LU5IlFBAj5wz0sgXfnx2+CzQUY8HLryChkz+auuUMxmhjAS/cjZWhovdIX0hkOp7IPEYx0uFeIVwkYZwuPHMt7ZwDmKpWAvkJAceM7XDLTDJz25rrnMVGUSppXDQixc3zeq5esJATJ279E9Y1of8+mbNq5O95BSQLJtvboqNK4eCCq50ayMFg0xwCOTcTq6JslbUP7rLAEF2HyiEjIlFy0b8Gsjn9OQC4I4gK8Bv/06Jpf9d/Gz1KU6YWXoJ+spkZRUV1SS110OMaV7+s4Rz0u60OUDnmwSL3r3ueKF43T88196bL4d7G3fHYewzciPuX9SHMpDXrI0admzZJ8BlItxhxMVa5hL+LzOg4nNfZT8E=
   file:
-    - Nippou Player-darwin-x64.zip
-    - Nippou Player-linux-x64.zip
-    - Nippou Player-win32-x64.zip
+    - builds/Nippou Player-darwin-x64.zip
+    - builds/Nippou Player-linux-x64.zip
+    - builds/Nippou Player-win32-x64.zip
   on:
     repo: hidakatsuya/nippou-player
     all_branches: true
