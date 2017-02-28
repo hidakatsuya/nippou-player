@@ -27,4 +27,5 @@ deploy:
     - Nippou Player-win32-x64.zip
   on:
     repo: hidakatsuya/nippou-player
+    all_branches: true
     tags: true
