@@ -1,6 +1,6 @@
 {
   "name": "nippou-player",
-  "version": "0.0.1",
+  "version": "0.1.0-beta",
   "productName": "Nippou Player for esa.io",
   "description": "A client for playing NIPPOU in esa.io.",
   "main": "./dist/main.js",
