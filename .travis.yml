@@ -12,6 +12,7 @@ before_install:
 branches:
   only:
     - master
+    - /^v/
 before_deploy:
   - sudo add-apt-repository ppa:ubuntu-wine/ppa -y
   - sudo apt-get update -q
