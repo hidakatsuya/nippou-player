@@ -21,12 +21,18 @@ Boot application at first, then setting page will be shown. Please set the follo
 
 That's all.
 
-## Todo
+## Todo & Known Issues
+
+### Todo
 
  - Better speech to improve grammer
  - Better error handling
  - (Internal) Improve test coverage
  - (Internal) Better code design
+
+### Known Issues
+
+ - Does not stop even when moving to other screen or closing app while playing speech
 
 ## Contributing
 
