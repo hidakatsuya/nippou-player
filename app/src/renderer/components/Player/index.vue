@@ -57,6 +57,10 @@
     beforeCreate () {
       if (!setting.isValid()) this.$router.push({ name: 'setting' })
     },
+    beforeRouteLeave (_to, _from, next) {
+      this.stop()
+      next(true)
+    },
     mounted () {
       this.load()
       // Work around that pause() does not work at first.
@@ -97,9 +101,11 @@
         window.speechSynthesis.pause()
       },
       nextDay () {
+        this.stop()
         this.date = moment(this.date).add(1, 'days').toDate()
       },
       prevDay () {
+        this.stop()
         this.date = moment(this.date).subtract(1, 'days').toDate()
       }
     },
