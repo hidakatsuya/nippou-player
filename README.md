@@ -30,10 +30,6 @@ That's all.
  - (Internal) Improve test coverage
  - (Internal) Better code design
 
-### Known Issues
-
- - Does not stop even when moving to other screen or closing app while playing speech
-
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/hidakatsuya/nippou-player.
