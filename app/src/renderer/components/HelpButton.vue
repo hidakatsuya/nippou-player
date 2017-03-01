@@ -9,7 +9,7 @@
 </style>
 
 <template>
-  <a href="#" v-on:click="onClick" class="help-button">
+  <a href="#" v-on:click.prevent="onClick" class="help-button">
     <span class="icon icon-help-circled"></span>
   </a>
 </template>
@@ -20,9 +20,8 @@
   export default {
     props: ['href'],
     methods: {
-      onClick (e) {
+      onClick () {
         shell.openExternal(this.href)
-        e.preventDefault()
       }
     }
   }
