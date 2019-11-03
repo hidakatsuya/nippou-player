@@ -74,7 +74,7 @@
       },
       play () {
         this.items.forEach(item => {
-          let note = SpeakerNoteBuilder.build(item.nippou)
+          let note = SpeakerNoteBuilder.build(item.nippou, setting.listSectinTitles)
           let speaker = new Speaker(note)
 
           speaker.onStart = () => {
