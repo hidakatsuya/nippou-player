@@ -16,7 +16,13 @@
             日報一覧のパス
             <help-button :href="'https://docs.esa.io/posts/104#2-0-0'" />
           </label>
-          <input type="text" v-model="setting.nippouPath" placeholder="in:日報/YYYY/MM/DD" class="form-control">
+          <input type="text" v-model="setting.nippouPath" placeholder="in:日報/YYYY/MM/DD" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>
+            対象セクション
+          </label>
+          <textarea v-model="setting.sectionTitles" placeholder="# セクション1" class="form-control" rows="4"></textarea>
         </div>
       </form>
     </div>
