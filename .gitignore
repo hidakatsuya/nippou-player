@@ -1,13 +1,21 @@
-app/dist/index.html
-app/dist/main.js
-app/dist/build.js
-app/dist/fonts/
-app/dist/imgs/
-app/dist/renderer.js
-app/dist/styles.css
-builds/*
-coverage
-node_modules/
-npm-debug.log
-npm-debug.log.*
-!.gitkeep
+.DS_Store
+node_modules
+/dist
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
