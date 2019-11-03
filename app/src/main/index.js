@@ -14,7 +14,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     height: 500,
     width: 280,
-    resizable: false
+    resizable: process.env.NODE_ENV === 'development'
   })
 
   mainWindow.loadURL(winURL)
