@@ -7,8 +7,18 @@
     />
     <div class="window-content">
       <transition name="fade" mode="out-in">
-        <BeatLoader v-if="loader.loading" :color="'#aaa'" :size="'6px'" />
-        <Playlist v-else :items="items" />
+        <template v-if="loader.state === 'loading'">
+          <BeatLoader :color="'#aaa'" :size="'6px'" />
+        </template>
+        <template v-else-if="loader.state === 'error'">
+          <div class="pane padded-more error-message">
+            <Message>日報の取得に失敗しました。</Message>
+            <div class="error-details">{{ loader.error_message }}</div>
+          </div>
+        </template>
+        <template v-else-if="loader.state === 'loaded'">
+          <Playlist :items="items" />
+        </template>
       </transition>
     </div>
   </div>
@@ -18,6 +28,7 @@
 import moment from 'moment'
 import setting from 'stores/Setting'
 import BeatLoader from 'vue-spinner/src/BeatLoader'
+import Message from 'Message'
 import Playlist from './Playlist'
 import Toolbar from './Toolbar'
 import PlaylistItem from 'models/PlaylistItem'
@@ -28,6 +39,7 @@ import NippouLoader from 'services/NippouLoader'
 export default {
   components: {
     Toolbar,
+    Message,
     Playlist,
     BeatLoader
   },
@@ -54,10 +66,9 @@ export default {
     Speaker.init()
   },
   methods: {
-    load () {
-      this.loader.load(this.date).then(nippous => {
-        this.items = nippous.map(nippou => new PlaylistItem(nippou))
-      })
+    async load () {
+      const nippous = await this.loader.load(this.date)
+      this.items = nippous.map(nippou => new PlaylistItem(nippou))
     },
     play () {
       this.items.forEach(item => {
@@ -121,5 +132,12 @@ export default {
 }
 .window-content {
   height: 100%;
+}
+.error-message {
+  margin: auto;
+}
+.error-message .error-details {
+  text-align: center;
+  color: #aaa;
 }
 </style>

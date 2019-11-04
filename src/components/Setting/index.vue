@@ -3,7 +3,7 @@
     <Toolbar />
     <div class="window-content">
       <form class="pane padded-more">
-        <Message v-if="!setting.isValid()">設定してください。</message>
+        <Message v-if="!setting.isValid()">設定してください。</Message>
         <div class="form-group">
           <label>
             Access token for esa API

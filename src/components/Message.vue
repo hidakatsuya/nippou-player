@@ -13,11 +13,9 @@ export default {
 <style scoped>
 .message {
   padding: 5px;
-  border-radius: 2px;
   border: 0;
   color: #888;
   text-align: center;
-  margin-bottom: 10px;
   font-size: 11px;
 }
 .message .icon {

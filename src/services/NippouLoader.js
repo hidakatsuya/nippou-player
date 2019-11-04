@@ -5,7 +5,8 @@ import PathFormatter from 'presenters/PathFormatter'
 export default class NippouLoader {
   constructor ({ authorizationKey, nippouPath }) {
     this.nippouPath = nippouPath
-    this.loading = false
+    this.state = null
+
     this.client = axios.create({
       baseURL: 'https://api.esa.io',
       headers: {
@@ -14,23 +15,25 @@ export default class NippouLoader {
     })
   }
 
-  load (date) {
+  async load (date) {
     const pathFormatter = new PathFormatter(this.nippouPath)
     const path = pathFormatter.format(date)
 
-    this.loading = true
+    try {
+      this.state = 'loading'
 
-    return new Promise(resolve => {
-      this.client.get('/v1/teams/misoca/posts', {
-        params: { q: path }
+      const response = await this.client.get('/v1/teams/misoca/posts', { params: { q: path } })
+      const nippous = response.data.posts.map(({ number, name, body_md, url }) => {
+        return new Nippou({ id: number, title: name, article: body_md, url })
       })
-      .then(({data}) => {
-        const nippous = data.posts.map(({ number, name, body_md, url }) =>
-          new Nippou({ id: number, title: name, article: body_md, url })
-        )
-        this.loading = false
-        resolve(nippous)
-      })
-    })
+
+      this.state = 'loaded'
+
+      return nippous
+    } catch (error) {
+      this.error_message = error.message
+      this.state = 'error'
+      return []
+    }
   }
 }
