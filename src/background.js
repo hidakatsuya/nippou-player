@@ -3,6 +3,7 @@
 import { app, protocol, BrowserWindow } from 'electron'
 import {
   createProtocol,
+  // eslint-disable-next-line no-unused-vars
   installVueDevtools
 } from 'vue-cli-plugin-electron-builder/lib'
 const isDevelopment = process.env.NODE_ENV !== 'production'
