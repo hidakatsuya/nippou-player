@@ -30,10 +30,10 @@
 </template>
 
 <script>
-import setting from '../../stores/Setting'
+import setting from 'stores/Setting'
 import Toolbar from './Toolbar'
-import Message from '../Message'
-import HelpButton from '../HelpButton'
+import Message from 'Message'
+import HelpButton from 'HelpButton'
 
 export default {
   components: {
