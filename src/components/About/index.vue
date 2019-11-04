@@ -18,7 +18,7 @@
 
 <template>
   <div class="window">
-    <toolbar />
+    <Toolbar />
     <div class="window-content">
       <div class="about pane padded-more">
         <img class="app-logo" src="./assets/logo.png" />

@@ -15,15 +15,15 @@
 
 <template>
   <div class="window">
-    <toolbar
+    <Toolbar
       :title="formattedDate"
       :next-day="nextDay" :prev-day="prevDay"
       :play="activeItem ? resume : play" :pause="pause" :stop="stop"
-    ></toolbar>
+    />
     <div class="window-content">
       <transition name="fade" mode="out-in">
-        <beat-loader v-if="loader.loading" :color="'#aaa'" :size="'6px'"></beat-loader>
-        <playlist v-else :items="items"></playlist>
+        <BeatLoader v-if="loader.loading" :color="'#aaa'" :size="'6px'" />
+        <Playlist v-else :items="items" />
       </transition>
     </div>
   </div>

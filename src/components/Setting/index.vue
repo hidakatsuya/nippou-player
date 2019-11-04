@@ -1,20 +1,20 @@
 <template>
   <div class="window">
-    <toolbar />
+    <Toolbar />
     <div class="window-content">
       <form class="pane padded-more">
-        <message v-if="!setting.isValid()">設定してください。</message>
+        <Message v-if="!setting.isValid()">設定してください。</message>
         <div class="form-group">
           <label>
             Access token for esa API
-            <help-button :href="'https://docs.esa.io/posts/102#3-0-0'" />
+            <HelpButton :href="'https://docs.esa.io/posts/102#3-0-0'" />
           </label>
           <input type="text" v-model="setting.authorizationKey" class="form-control">
         </div>
         <div class="form-group">
           <label>
             日報一覧のパス
-            <help-button :href="'https://docs.esa.io/posts/104#2-0-0'" />
+            <HelpButton :href="'https://docs.esa.io/posts/104#2-0-0'" />
           </label>
           <input type="text" v-model="setting.nippouPath" placeholder="in:日報/YYYY/MM/DD" class="form-control">
         </div>
