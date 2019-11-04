@@ -1,6 +1,6 @@
 export default class Speaker {
   static init () {
-    let speaker = new this('a')
+    const speaker = new this('a')
     speaker.speak()
     window.speechSynthesis.cancel()
   }
