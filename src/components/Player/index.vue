@@ -54,8 +54,10 @@ export default {
       activeItem: null
     }
   },
-  beforeCreate () {
-    if (!setting.isValid()) this.$router.push({ name: 'setting' })
+  beforeMount () {
+    if (!setting.isValid()) {
+      this.$router.push({ name: 'setting' })
+    }
   },
   beforeRouteLeave (_to, _from, next) {
     this.stop()
