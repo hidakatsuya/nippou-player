@@ -5,7 +5,7 @@ export default class PlaylistItem {
 
   constructor (nippou) {
     this.nippou = nippou
-    this.nowPending()
+    this.status = this.constructor.PENDING
   }
 
   nowPlaying () {
