@@ -1,6 +1,6 @@
 import axios from 'axios'
-import Nippou from '../models/Nippou'
-import PathFormatter from '../presenters/PathFormatter'
+import Nippou from 'models/Nippou'
+import PathFormatter from 'presenters/PathFormatter'
 
 export default class NippouLoader {
   constructor ({ authorizationKey, nippouPath }) {
