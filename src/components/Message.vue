@@ -8,6 +8,9 @@
   margin-bottom: 10px;
   font-size: 11px;
 }
+.message .icon {
+  margin-right: 3px;
+}
 </style>
 
 <template>
