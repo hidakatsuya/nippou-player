@@ -1,18 +1,3 @@
-<style scoped>
-.fade-enter-active {
-  transition: opacity .2s;
-}
-.fade-enter {
-  opacity: 0;
-}
-.v-spinner {
-  margin: auto;
-}
-.window-content {
-  height: 100%;
-}
-</style>
-
 <template>
   <div class="window">
     <Toolbar
@@ -123,3 +108,18 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.fade-enter-active {
+  transition: opacity .2s;
+}
+.fade-enter {
+  opacity: 0;
+}
+.v-spinner {
+  margin: auto;
+}
+.window-content {
+  height: 100%;
+}
+</style>

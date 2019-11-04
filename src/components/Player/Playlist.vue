@@ -1,29 +1,3 @@
-<style scoped>
-.item-status {
-  width: 30px;
-  padding: 2px 0;
-  text-align: center;
-}
-.item-title {
-  padding: 2px 0;
-}
-.item-title a {
-  width: 245px;
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: #000;
-  text-decoration: none;
-}
-.not-found {
-  text-align: center;
-  color: #bbb;
-  font-size: 11px;
-  margin: auto;
-}
-</style>
-
 <template>
   <table v-if="items.length > 0" class="table-striped">
     <tbody>
@@ -53,3 +27,29 @@ export default {
   props: ['items']
 }
 </script>
+
+<style scoped>
+.item-status {
+  width: 30px;
+  padding: 2px 0;
+  text-align: center;
+}
+.item-title {
+  padding: 2px 0;
+}
+.item-title a {
+  width: 245px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #000;
+  text-decoration: none;
+}
+.not-found {
+  text-align: center;
+  color: #bbb;
+  font-size: 11px;
+  margin: auto;
+}
+</style>

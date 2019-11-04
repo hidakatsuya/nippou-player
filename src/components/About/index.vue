@@ -1,21 +1,3 @@
-<style scoped>
-.about {
-  text-align: center;
-}
-.app-logo {
-  width: 80px;
-  height: 80px;
-}
-.app-name {
-  margin-top: 10px;
-}
-.app-version {
-  color: #aaa;
-  font-size: .9em;
-  margin-top: 10px;
-}
-</style>
-
 <template>
   <div class="window">
     <Toolbar />
@@ -46,3 +28,21 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.about {
+  text-align: center;
+}
+.app-logo {
+  width: 80px;
+  height: 80px;
+}
+.app-name {
+  margin-top: 10px;
+}
+.app-version {
+  color: #aaa;
+  font-size: .9em;
+  margin-top: 10px;
+}
+</style>

@@ -1,3 +1,15 @@
+<template>
+  <div class="message">
+    <span class="icon icon-attention"></span>
+    <slot></slot>
+  </div>
+</template>
+
+<script>
+export default {
+}
+</script>
+
 <style scoped>
 .message {
   padding: 5px;
@@ -12,15 +24,3 @@
   margin-right: 3px;
 }
 </style>
-
-<template>
-  <div class="message">
-    <span class="icon icon-attention"></span>
-    <slot></slot>
-  </div>
-</template>
-
-<script>
-export default {
-}
-</script>

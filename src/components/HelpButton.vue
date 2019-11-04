@@ -1,15 +1,3 @@
-<style scoped>
-.help-button {
-  padding: 0 1px;
-}
-.help-button a {
-  color: #aaa;
-}
-.help-button:hover a {
-  color: #000;
-}
-</style>
-
 <template>
   <span class="help-button">
     <ExternalLink :href="href">
@@ -28,3 +16,15 @@ export default {
   props: ['href']
 }
 </script>
+
+<style scoped>
+.help-button {
+  padding: 0 1px;
+}
+.help-button a {
+  color: #aaa;
+}
+.help-button:hover a {
+  color: #000;
+}
+</style>
