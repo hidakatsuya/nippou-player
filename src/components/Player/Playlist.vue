@@ -1,36 +1,41 @@
-<style>
-  .item-status {
-    width: 30px;
-    padding: 2px 0;
-    text-align: center;
-  }
-  .item-title {
-    padding: 2px 0;
-  }
-  .item-title .content {
-    width: 245px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .not-found {
-    text-align: center;
-    color: #bbb;
-    font-size: 11px;
-    margin: auto;
-  }
+<style scoped>
+.item-status {
+  width: 30px;
+  padding: 2px 0;
+  text-align: center;
+}
+.item-title {
+  padding: 2px 0;
+}
+.item-title a {
+  width: 245px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #000;
+  text-decoration: none;
+}
+.not-found {
+  text-align: center;
+  color: #bbb;
+  font-size: 11px;
+  margin: auto;
+}
 </style>
 
 <template>
   <table v-if="items.length > 0" class="table-striped">
     <tbody>
-      <tr v-for="item in items" v-on:click="open(item.nippou.url)">
+      <tr v-for="item in items" v-bind:key="item.id">
         <td class="item-status">
           <span v-if="item.playing" class="icon icon-sound"></span>
           <span v-if="item.paused" class="icon icon-mute"></span>
         </td>
         <td class="item-title">
-          <div class="content">{{ item.nippou.title }}</div>
+          <ExternalLink :href="item.nippou.url">
+            {{ item.nippou.title }}
+          </ExternalLink>
         </td>
       </tr>
     </tbody>
@@ -39,14 +44,12 @@
 </template>
 
 <script>
-  import { shell } from 'electron'
+import ExternalLink from 'ExternalLink'
 
-  export default {
-    props: ['items'],
-    methods: {
-      open (nippouUrl) {
-        shell.openExternal(nippouUrl)
-      }
-    }
-  }
+export default {
+  components: {
+    ExternalLink
+  },
+  props: ['items']
+}
 </script>

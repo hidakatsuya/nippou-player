@@ -32,7 +32,7 @@
 </template>
 
 <script>
-  export default {
-    props: ['title', 'play', 'stop', 'pause', 'nextDay', 'prevDay']
-  }
+export default {
+  props: ['title', 'play', 'stop', 'pause', 'nextDay', 'prevDay']
+}
 </script>

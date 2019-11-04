@@ -1,16 +1,16 @@
-<style>
-  .fade-enter-active {
-    transition: opacity .2s;
-  }
-  .fade-enter {
-    opacity: 0;
-  }
-  .v-spinner {
-    margin: auto;
-  }
-  .window-content {
-    height: 100%;
-  }
+<style scoped>
+.fade-enter-active {
+  transition: opacity .2s;
+}
+.fade-enter {
+  opacity: 0;
+}
+.v-spinner {
+  margin: auto;
+}
+.window-content {
+  height: 100%;
+}
 </style>
 
 <template>
@@ -30,94 +30,94 @@
 </template>
 
 <script>
-  import moment from 'moment'
-  import setting from '../../stores/Setting'
-  import BeatLoader from 'vue-spinner/src/BeatLoader'
-  import Playlist from './Playlist'
-  import Toolbar from './Toolbar'
-  import PlaylistItem from '../../models/PlaylistItem'
-  import Speaker from '../../services/Speaker'
-  import SpeakerNoteBuilder from '../../presenters/SpeakerNoteBuilder'
-  import NippouLoader from '../../services/NippouLoader'
+import moment from 'moment'
+import setting from 'stores/Setting'
+import BeatLoader from 'vue-spinner/src/BeatLoader'
+import Playlist from './Playlist'
+import Toolbar from './Toolbar'
+import PlaylistItem from 'models/PlaylistItem'
+import Speaker from 'services/Speaker'
+import SpeakerNoteBuilder from 'presenters/SpeakerNoteBuilder'
+import NippouLoader from 'services/NippouLoader'
 
-  export default {
-    components: {
-      Toolbar,
-      Playlist,
-      BeatLoader
+export default {
+  components: {
+    Toolbar,
+    Playlist,
+    BeatLoader
+  },
+  data () {
+    return {
+      loader: new NippouLoader(setting),
+      date: moment().subtract(1, 'days').toDate(),
+      items: [],
+      activeItem: null
+    }
+  },
+  beforeCreate () {
+    if (!setting.isValid()) this.$router.push({ name: 'setting' })
+  },
+  beforeRouteLeave (_to, _from, next) {
+    this.stop()
+    next(true)
+  },
+  mounted () {
+    this.load()
+    // Work around that pause() does not work at first.
+    Speaker.init()
+  },
+  methods: {
+    load () {
+      this.loader.load(this.date).then(nippous => {
+        this.items = nippous.map(nippou => new PlaylistItem(nippou))
+      })
     },
-    data () {
-      return {
-        loader: new NippouLoader(setting),
-        date: moment().subtract(1, 'days').toDate(),
-        items: [],
-        activeItem: null
-      }
+    play () {
+      this.items.forEach(item => {
+        let note = SpeakerNoteBuilder.build(item.nippou, setting.listSectinTitles)
+        let speaker = new Speaker(note)
+
+        speaker.onStart = () => {
+          item.nowPlaying()
+          this.activeItem = item
+        }
+        speaker.onEnd = () => {
+          item.nowPending()
+          this.activeItem = null
+        }
+        speaker.onResume = () => item.nowPlaying()
+        speaker.onPause = () => item.nowPaused()
+
+        speaker.speak()
+      })
     },
-    beforeCreate () {
-      if (!setting.isValid()) this.$router.push({ name: 'setting' })
+    resume () {
+      window.speechSynthesis.resume()
     },
-    beforeRouteLeave (_to, _from, next) {
+    stop () {
+      window.speechSynthesis.cancel()
+    },
+    pause () {
+      window.speechSynthesis.pause()
+    },
+    nextDay () {
       this.stop()
-      next(true)
+      this.date = moment(this.date).add(1, 'days').toDate()
     },
-    mounted () {
+    prevDay () {
+      this.stop()
+      this.date = moment(this.date).subtract(1, 'days').toDate()
+    }
+  },
+  watch: {
+    date () {
       this.load()
-      // Work around that pause() does not work at first.
-      Speaker.init()
-    },
-    methods: {
-      load () {
-        this.loader.load(this.date).then(nippous => {
-          this.items = nippous.map(nippou => new PlaylistItem(nippou))
-        })
-      },
-      play () {
-        this.items.forEach(item => {
-          let note = SpeakerNoteBuilder.build(item.nippou)
-          let speaker = new Speaker(note)
-
-          speaker.onStart = () => {
-            item.nowPlaying()
-            this.activeItem = item
-          }
-          speaker.onEnd = () => {
-            item.nowPending()
-            this.activeItem = null
-          }
-          speaker.onResume = () => item.nowPlaying()
-          speaker.onPause = () => item.nowPaused()
-
-          speaker.speak()
-        })
-      },
-      resume () {
-        window.speechSynthesis.resume()
-      },
-      stop () {
-        window.speechSynthesis.cancel()
-      },
-      pause () {
-        window.speechSynthesis.pause()
-      },
-      nextDay () {
-        this.stop()
-        this.date = moment(this.date).add(1, 'days').toDate()
-      },
-      prevDay () {
-        this.stop()
-        this.date = moment(this.date).subtract(1, 'days').toDate()
-      }
-    },
-    watch: {
-      date () {
-        this.load()
-      }
-    },
-    computed: {
-      formattedDate () {
-        return moment(this.date).format('YYYY-MM-DD')
-      }
+    }
+  },
+  computed: {
+    formattedDate () {
+      return moment(this.date).format('YYYY-MM-DD')
     }
   }
+}
 </script>
