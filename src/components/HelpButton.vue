@@ -1,17 +1,21 @@
 <style scoped>
 .help-button {
-  color: #aaa;
   padding: 0 1px;
 }
-.help-button:hover {
+.help-button a {
+  color: #aaa;
+}
+.help-button:hover a {
   color: #000;
 }
 </style>
 
 <template>
-  <ExternalLink :href="href">
-    <span class="icon icon-help-circled"></span>
-  </ExternalLink>
+  <span class="help-button">
+    <ExternalLink :href="href">
+      <span class="icon icon-help-circled"></span>
+    </ExternalLink>
+  </span>
 </template>
 
 <script>

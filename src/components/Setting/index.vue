@@ -20,7 +20,7 @@
         </div>
         <div class="form-group">
           <label>
-            対象セクション
+            スピーチするセクション
           </label>
           <textarea v-model="setting.sectionTitles" placeholder="# セクション1" class="form-control" rows="4"></textarea>
         </div>
