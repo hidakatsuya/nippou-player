@@ -1,24 +1,39 @@
-# nippou-player
+# NIPPOU Player for esa.io
 
-## Project setup
-```
-npm install
+[![Build Status](https://travis-ci.org/hidakatsuya/nippou-player.svg?branch=master)](https://travis-ci.org/hidakatsuya/nippou-player)
+
+A client for playing NIPPOU in [esa.io](https://esa.io).
+
+<p style="text-align: center;">
+  <img src="image.png" width="400" />
+</p>
+
+## Getting Started
+
+### Installing
+
+Download the latest package from  [Releases](https://github.com/hidakatsuya/nippou-player/releases).
+
+### Setting
+
+Boot application at first, then setting page will be shown. Please set the following settings on the page:
+
+ - Set Access token for esa API
+ - Set path to index of NIPPOU(日報) for your esa.io
+
+That's all.
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/hidakatsuya/nippou-player.
+
+## Development
+
+```bash
+$ npm install
+$ npm run serve or electron:serve
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Copyright
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+2017 &copy; Katsuya HIDAKA. See MIT-LICENSE for further details.
