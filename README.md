@@ -2,7 +2,9 @@
 
 A client for playing NIPPOU in [esa.io](https://esa.io).
 
-<img src="image.png" width="400" />
+<p align="center">
+  <img src="image.png" width="400" />
+</p>
 
 ## Getting Started
 
