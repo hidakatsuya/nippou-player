@@ -1,5 +1,7 @@
 # NIPPOU Player for esa.io
 
+[![](https://github.com/hidakatsuya/nippou-player/workflows/Test/badge.svg)](https://github.com/hidakatsuya/nippou-player/actions?query=branch%3Amaster)
+
 A client for playing NIPPOU in [esa.io](https://esa.io).
 
 <p align="center">
