@@ -1,10 +1,22 @@
 <template>
-  <table v-if="items.length > 0" class="table-striped">
+  <table
+    v-if="items.length > 0"
+    class="table-striped"
+  >
     <tbody>
-      <tr v-for="item in items" v-bind:key="item.id">
+      <tr
+        v-for="item in items"
+        :key="item.id"
+      >
         <td class="item-status">
-          <span v-if="item.playing" class="icon icon-sound"></span>
-          <span v-if="item.paused" class="icon icon-mute"></span>
+          <span
+            v-if="item.playing"
+            class="icon icon-sound"
+          />
+          <span
+            v-if="item.paused"
+            class="icon icon-mute"
+          />
         </td>
         <td class="item-title">
           <ExternalLink :href="item.nippou.url">
@@ -14,7 +26,12 @@
       </tr>
     </tbody>
   </table>
-  <div v-else class="pane not-found">日報が見つかりません。</div>
+  <div
+    v-else
+    class="pane not-found"
+  >
+    日報が見つかりません。
+  </div>
 </template>
 
 <script>

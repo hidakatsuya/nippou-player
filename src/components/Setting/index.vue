@@ -3,26 +3,42 @@
     <Toolbar />
     <div class="window-content">
       <form class="pane padded-more">
-        <Message v-if="!setting.isValid()">設定してください。</Message>
+        <Message v-if="!setting.isValid()">
+          設定してください。
+        </Message>
         <div class="form-group">
           <label>
             Access token for esa API
             <HelpButton :href="'https://docs.esa.io/posts/102#3-0-0'" />
           </label>
-          <input type="text" v-model="setting.authorizationKey" class="form-control">
+          <input
+            v-model="setting.authorizationKey"
+            type="text"
+            class="form-control"
+          >
         </div>
         <div class="form-group">
           <label>
             日報一覧のパス
             <HelpButton :href="'https://docs.esa.io/posts/104#2-0-0'" />
           </label>
-          <input type="text" v-model="setting.nippouPath" placeholder="in:日報/YYYY/MM/DD" class="form-control">
+          <input
+            v-model="setting.nippouPath"
+            type="text"
+            placeholder="in:日報/YYYY/MM/DD"
+            class="form-control"
+          >
         </div>
         <div class="form-group">
           <label>
             スピーチするセクション
           </label>
-          <textarea v-model="setting.sectionTitles" placeholder="# セクション1" class="form-control" rows="4"></textarea>
+          <textarea
+            v-model="setting.sectionTitles"
+            placeholder="# セクション1"
+            class="form-control"
+            rows="4"
+          />
         </div>
       </form>
     </div>

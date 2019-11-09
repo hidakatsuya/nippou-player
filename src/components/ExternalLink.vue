@@ -1,6 +1,11 @@
 <template>
-  <a :href="href" @click="onClick" target="_blank" class="external-link">
-    <slot></slot>
+  <a
+    :href="href"
+    target="_blank"
+    class="external-link"
+    @click="onClick"
+  >
+    <slot />
   </a>
 </template>
 

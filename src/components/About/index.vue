@@ -3,9 +3,16 @@
     <Toolbar />
     <div class="window-content">
       <div class="about pane padded-more">
-        <img class="app-logo" src="./assets/logo.png" />
-        <div class="app-name">{{ productName }}</div>
-        <div class="app-version">{{ version }}</div>
+        <img
+          class="app-logo"
+          src="./assets/logo.png"
+        >
+        <div class="app-name">
+          {{ productName }}
+        </div>
+        <div class="app-version">
+          {{ version }}
+        </div>
       </div>
     </div>
   </div>

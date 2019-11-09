@@ -1,7 +1,7 @@
 <template>
   <div class="message">
-    <span class="icon icon-attention"></span>
-    <slot></slot>
+    <span class="icon icon-attention" />
+    <slot />
   </div>
 </template>
 

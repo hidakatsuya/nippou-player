@@ -1,7 +1,7 @@
 <template>
   <span class="help-button">
     <ExternalLink :href="href">
-      <span class="icon icon-help-circled"></span>
+      <span class="icon icon-help-circled" />
     </ExternalLink>
   </span>
 </template>

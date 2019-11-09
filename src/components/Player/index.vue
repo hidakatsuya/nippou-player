@@ -2,18 +2,29 @@
   <div class="window">
     <Toolbar
       :title="formattedDate"
-      :next-day="nextDay" :prev-day="prevDay"
-      :play="activeItem ? resume : play" :pause="pause" :stop="stop"
+      :next-day="nextDay"
+      :prev-day="prevDay"
+      :play="activeItem ? resume : play"
+      :pause="pause"
+      :stop="stop"
     />
     <div class="window-content">
-      <transition name="fade" mode="out-in">
+      <transition
+        name="fade"
+        mode="out-in"
+      >
         <template v-if="loader.state === 'loading'">
-          <BeatLoader :color="'#aaa'" :size="'6px'" />
+          <BeatLoader
+            :color="'#aaa'"
+            :size="'6px'"
+          />
         </template>
         <template v-else-if="loader.state === 'error'">
           <div class="pane padded-more error-message">
             <Message>日報の取得に失敗しました。</Message>
-            <div class="error-details">{{ loader.error_message }}</div>
+            <div class="error-details">
+              {{ loader.error_message }}
+            </div>
           </div>
         </template>
         <template v-else-if="loader.state === 'loaded'">
@@ -49,6 +60,16 @@ export default {
       date: moment().subtract(1, 'days').toDate(),
       items: [],
       activeItem: null
+    }
+  },
+  computed: {
+    formattedDate () {
+      return moment(this.date).format('YYYY-MM-DD')
+    }
+  },
+  watch: {
+    date () {
+      this.load()
     }
   },
   beforeMount () {
@@ -105,16 +126,6 @@ export default {
     prevDay () {
       this.stop()
       this.date = moment(this.date).subtract(1, 'days').toDate()
-    }
-  },
-  watch: {
-    date () {
-      this.load()
-    }
-  },
-  computed: {
-    formattedDate () {
-      return moment(this.date).format('YYYY-MM-DD')
     }
   }
 }
