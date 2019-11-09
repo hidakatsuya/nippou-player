@@ -7,7 +7,9 @@ module.exports = {
     'plugin:vue/recommended',
     'eslint:recommended'
   ],
-  rules: {},
+  rules: {
+    semi: ['error', 'never']
+  },
   overrides: [
     {
       files: [
