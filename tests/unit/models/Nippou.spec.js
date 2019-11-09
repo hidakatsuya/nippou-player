@@ -7,15 +7,15 @@ describe('Nippou', () => {
     url: 'https://example.com'
   })
 
-  it('#title', () => {
+  test('#title', () => {
     expect(nippou.title).toBe('Nippou')
   })
 
-  it('#article', () => {
+  test('#article', () => {
     expect(nippou.article).toBe('# Title')
   })
 
-  it('#url', () => {
+  test('#url', () => {
     expect(nippou.url).toBe('https://example.com')
   })
 })

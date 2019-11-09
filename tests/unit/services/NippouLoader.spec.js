@@ -12,18 +12,18 @@ describe('NippouLoader', () => {
   describe('#constructor', () => {
     const loader = new NippouLoader(setting)
 
-    it('#client', () => {
+    test('#client', () => {
       const { baseURL, headers } = loader.client.defaults
       expect(baseURL).toBe('https://api.esa.io')
       expect(headers.common.Authorization).toBe(`Bearer ${setting.authorizationKey}`)
     })
 
-    it('#loading', () => {
+    test('#loading', () => {
       expect(loader.loading).toBeFalsy()
     })
   })
 
-  it('#load', async () => {
+  test('#load', async () => {
     const loader = new NippouLoader(setting)
     const date = moment('2017-02-25')
     const queryPath = 'in: 日報/2017/02/25'

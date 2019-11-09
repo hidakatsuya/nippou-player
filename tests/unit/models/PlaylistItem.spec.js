@@ -7,21 +7,21 @@ describe('PlaylistItem', () => {
     item = new PlaylistItem({})
   })
 
-  it('constructor', () => {
+  test('constructor', () => {
     expect(item.status).toBe('pending')
   })
 
-  it('#nowPlaying', () => {
+  test('#nowPlaying', () => {
     item.nowPlaying()
     expect(item.status).toBe('playing')
   })
 
-  it('#nowPaused', () => {
+  test('#nowPaused', () => {
     item.nowPaused()
     expect(item.status).toBe('paused')
   })
 
-  it('#playing', () => {
+  test('#playing', () => {
     item.status = 'playing'
     expect(item.playing).toBeTruthy()
 
@@ -29,7 +29,7 @@ describe('PlaylistItem', () => {
     expect(item.playing).toBeFalsy()
   })
 
-  it('#paused', () => {
+  test('#paused', () => {
     item.status = 'paused'
     expect(item.paused).toBeTruthy()
 

@@ -1,41 +1,41 @@
 import setting from 'stores/Setting'
 
 describe('setting', () => {
-  it('constructor', () => {
+  test('constructor', () => {
     expect(setting.storage).toBeInstanceOf(Storage)
   })
 
-  it('#authorizationKey=', () => {
+  test('#authorizationKey=', () => {
     setting.authorizationKey = 'abcd'
     expect(window.localStorage.getItem('authorizationKey')).toBe('abcd')
   })
 
-  it('#nippouPath=', () => {
+  test('#nippouPath=', () => {
     setting.nippouPath = '/path/to/nippous'
     expect(window.localStorage.getItem('nippouPath')).toBe('/path/to/nippous')
   })
 
-  it('#sectionTitles=', () => {
+  test('#sectionTitles=', () => {
     setting.sectionTitles = '# section1'
     expect(window.localStorage.getItem('sectionTitles')).toBe('# section1')
   })
 
-  it('#authorizationKey', () => {
+  test('#authorizationKey', () => {
     window.localStorage.setItem('authorizationKey', 'xxx')
     expect(setting.authorizationKey).toBe('xxx')
   })
 
-  it('#nippouPath', () => {
+  test('#nippouPath', () => {
     window.localStorage.setItem('nippouPath', '/path')
     expect(setting.nippouPath).toBe('/path')
   })
 
-  it('#sectionTitles', () => {
+  test('#sectionTitles', () => {
     window.localStorage.setItem('sectionTitles', '# section1\n# section2')
     expect(setting.sectionTitles).toBe('# section1\n# section2')
   })
 
-  it('#listSectionTitles', () => {
+  test('#listSectionTitles', () => {
     window.localStorage.setItem('sectionTitles', '# section1\n# section2')
     expect(setting.listSectinTitles).toEqual(['# section1', '# section2'])
   })
