@@ -31,7 +31,7 @@
         </div>
         <div class="form-group">
           <label>
-            スピーチするセクション (Optional)
+            スピーチするセクション (オプション)
           </label>
           <textarea
             v-model="setting.sectionTitles"
