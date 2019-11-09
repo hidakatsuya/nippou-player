@@ -8,7 +8,7 @@
         </Message>
         <div class="form-group">
           <label>
-            Access token for esa API
+            esa API のアクセストークン
             <HelpButton :href="'https://docs.esa.io/posts/102#3-0-0'" />
           </label>
           <input
@@ -31,7 +31,7 @@
         </div>
         <div class="form-group">
           <label>
-            スピーチするセクション
+            スピーチするセクション (Optional)
           </label>
           <textarea
             v-model="setting.sectionTitles"
