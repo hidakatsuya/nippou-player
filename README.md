@@ -14,14 +14,11 @@ A client for playing NIPPOU in [esa.io](https://esa.io).
 
 Download the latest package from  [Releases](https://github.com/hidakatsuya/nippou-player/releases).
 
-### Setting
+### Setup
 
-Boot application at first, then setting page will be shown. Please set the following settings on the page:
-
- - Set Access token for esa API
- - Set path to index of NIPPOU(日報) for your esa.io
-
-That's all.
+1. Go to the settings page
+2. Register esa API access token
+3. Register search path for NIPPOU articles
 
 ## Contributing
 
