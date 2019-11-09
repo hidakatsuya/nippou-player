@@ -58,7 +58,32 @@
 
 <script>
 export default {
-  props: ['title', 'play', 'stop', 'pause', 'nextDay', 'prevDay']
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    play: {
+      type: Function,
+      required: true
+    },
+    stop: {
+      type: Function,
+      required: true
+    },
+    pause: {
+      type: Function,
+      required: true
+    },
+    nextDay: {
+      type: Function,
+      required: true
+    },
+    prevDay: {
+      type: Function,
+      required: true
+    }
+  }
 }
 </script>
 

@@ -41,7 +41,12 @@ export default {
   components: {
     ExternalLink
   },
-  props: ['items']
+  props: {
+    items: {
+      type: Array,
+      required: true
+    }
+  }
 }
 </script>
 

@@ -13,7 +13,12 @@ export default {
   components: {
     ExternalLink
   },
-  props: ['href']
+  props: {
+    href: {
+      type: String,
+      required: true
+    }
+  }
 }
 </script>
 

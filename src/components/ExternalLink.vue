@@ -11,7 +11,12 @@
 
 <script>
 export default {
-  props: ['href'],
+  props: {
+    href: {
+      type: String,
+      required: true
+    }
+  },
   methods: {
     onClick (e) {
       if (process.env.NODE_ENV === 'production') {
