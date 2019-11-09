@@ -10,8 +10,10 @@ export default {
   methods: {
     onClick (e) {
       if (process.env.NODE_ENV === 'production') {
-        import('electron').shell.openExternal(this.href)
-        e.preventDefault()
+        import('electron').then(({ shell }) => {
+          shell.openExternal(this.href)
+          e.preventDefault()
+        })
       }
     }
   }

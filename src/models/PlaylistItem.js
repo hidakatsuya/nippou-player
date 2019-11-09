@@ -1,30 +1,30 @@
-export default class PlaylistItem {
-  static PENDING = 'pending'
-  static PLAYING = 'playing'
-  static PAUSED = 'paused'
+const PENDING = 'pending'
+const PLAYING = 'playing'
+const PAUSED = 'paused'
 
+export default class PlaylistItem {
   constructor (nippou) {
     this.nippou = nippou
-    this.status = this.constructor.PENDING
+    this.status = PENDING
   }
 
   nowPlaying () {
-    this.status = this.constructor.PLAYING
+    this.status = PLAYING
   }
 
   nowPaused () {
-    this.status = this.constructor.PAUSED
+    this.status = PAUSED
   }
 
   nowPending () {
-    this.status = this.constructor.PENDING
+    this.status = PENDING
   }
 
   get playing () {
-    return this.status === this.constructor.PLAYING
+    return this.status === PLAYING
   }
 
   get paused () {
-    return this.status === this.constructor.PAUSED
+    return this.status === PAUSED
   }
 }

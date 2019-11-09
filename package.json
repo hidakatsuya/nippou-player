@@ -23,12 +23,13 @@
     "vue-spinner": "^1.0.3"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.12.0",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
     "@vue/cli-plugin-eslint": "^3.12.0",
     "@vue/cli-plugin-unit-jest": "^4.0.5",
     "@vue/cli-service": "^3.12.0",
     "@vue/test-utils": "1.0.0-beta.29",
-    "babel-eslint": "^10.0.1",
+    "axios-mock-adapter": "^1.17.0",
     "babel-jest": "^24.9.0",
     "electron": "^6.0.0",
     "eslint": "^5.16.0",
@@ -37,61 +38,6 @@
     "vue-cli-plugin-electron-builder": "^1.4.0",
     "vue-jest": "^3.0.5",
     "vue-template-compiler": "^2.6.10"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "overrides": [
-      {
-        "files": [
-          "**/__tests__/*.{j,t}s?(x)",
-          "**/tests/unit/**/*.spec.{j,t}s?(x)"
-        ],
-        "env": {
-          "jest": true
-        }
-      }
-    ]
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "vue"
-    ],
-    "transform": {
-      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
-      ".*\\.(vue)$": "vue-jest"
-    },
-    "transformIgnorePatterns": [
-      "node_modules/"
-    ],
-    "modulePaths": [
-      "<rootDir>/src",
-      "<rootDir>/src/components",
-      "<rootDir>/node_modules"
-    ]
-  },
-  "babel": {
-    "presets": [
-      ["@babel/preset-env", { "modules": false }]
-    ],
-    "env": {
-      "test": {
-        "presets": [
-          ["@babel/preset-env", { "targets": { "node": "current" }}]
-        ]
-      }
-    }
   },
   "postcss": {
     "plugins": {
