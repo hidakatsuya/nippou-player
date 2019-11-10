@@ -70,7 +70,7 @@ export default class SpeakerNoteBuilder {
   }
 
   removeUrl (article) {
-    return article.replace(/(http|https):\/\/([\w-]+\.)+[\w-]+(\/[\w-./?%&=]*)?/, '')
+    return article.replace(/(http|https):\/\/([\w-]+\.)+[\w-]+(\/[\w-./?%&=]*)?/g, '')
   }
 
   removeEmoji (article) {

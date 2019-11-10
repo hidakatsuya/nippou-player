@@ -61,8 +61,9 @@ content for section2`
     })
 
     test('#removeUrl', () => {
-      const article = '# section\n\nhttps://www.example.com/foo/bar text'
-      expect(builder.removeUrl(article)).toBe('# section\n\n text')
+      const url = 'https://www.example.com/foo/bar'
+      const article = `# section\n\n${url} text ${url}`
+      expect(builder.removeUrl(article)).toBe('# section\n\n text ')
     })
 
     test('#replaceLinkWithText', () => {
