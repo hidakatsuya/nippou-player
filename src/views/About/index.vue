@@ -5,7 +5,7 @@
       <div class="about pane padded-more">
         <img
           class="app-logo"
-          src="./assets/logo.png"
+          src="../../assets/logo.png"
         >
         <div class="app-name">
           {{ productName }}
