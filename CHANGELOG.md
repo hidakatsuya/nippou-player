@@ -1,10 +1,13 @@
-## master
+## 1.0.0
+
+### Breaking Changes
+
+ - Switch to PWA from Electrion App
 
 ### Enhancements
 
  - Add a feature to filter the section you want to hear
- - Improve content of the speaker note
-   - Ignore all tables, images and emojis
+ - Improve the content of the speaker note (Ignore all tables, images and emojis)
 
 ## 0.1.0
 
