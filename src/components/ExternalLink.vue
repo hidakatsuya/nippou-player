@@ -3,7 +3,6 @@
     :href="href"
     target="_blank"
     class="external-link"
-    @click="onClick"
   >
     <slot />
   </a>
