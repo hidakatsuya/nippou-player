@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
+import { app, protocol, BrowserWindow, Menu } from 'electron'
 import {
   createProtocol,
   // eslint-disable-next-line no-unused-vars
@@ -26,6 +26,8 @@ function createWindow () {
     }
   })
 
+  createMenu()
+
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
@@ -39,6 +41,60 @@ function createWindow () {
   win.on('closed', () => {
     win = null
   })
+}
+
+function createMenu () {
+  const application = {
+    label: 'Application',
+    submenu: [
+      {
+        label: 'Quit',
+        accelerator: 'Command+Q',
+        click: () => { app.quit() }
+      }
+    ]
+  }
+  const edit = {
+    label: 'Edit',
+    submenu: [
+      {
+        label: 'Undo',
+        accelerator: 'CmdOrCtrl+Z',
+        role: 'undo'
+      },
+      {
+        label: 'Redo',
+        accelerator: 'Shift+CmdOrCtrl+Z',
+        role: 'redo'
+      },
+      {
+        type: 'separator'
+      },
+      {
+        label: 'Cut',
+        accelerator: 'CmdOrCtrl+X',
+        role: 'cut'
+      },
+      {
+        label: 'Copy',
+        accelerator: 'CmdOrCtrl+C',
+        role: 'copy'
+      },
+      {
+        label: 'Paste',
+        accelerator: 'CmdOrCtrl+V',
+        role: 'paste'
+      },
+      {
+        label: 'Select All',
+        accelerator: 'CmdOrCtrl+A',
+        role: 'selectAll'
+      }
+    ]
+  }
+  const template = [application, edit]
+
+  Menu.setApplicationMenu(Menu.buildFromTemplate(template))
 }
 
 // Quit when all windows are closed.
