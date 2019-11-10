@@ -1,6 +1,6 @@
-import Player from './components/Player/index'
-import Setting from './components/Setting/index'
-import About from './components/About/index'
+import Player from './views/Player/index'
+import Setting from './views/Setting/index'
+import About from './views/About/index'
 
 export default [
   {
