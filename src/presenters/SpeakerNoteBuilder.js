@@ -50,7 +50,7 @@ export default class SpeakerNoteBuilder {
   }
 
   replaceImage (article) {
-    return article.replace(/!\[(.*?)\]\(.*?\)/g, '画像 $1')
+    return article.replace(/!\[(.*?)\]\(.*?\)/g, '[Image $1]')
   }
 
   replaceLinkWithText (article) {

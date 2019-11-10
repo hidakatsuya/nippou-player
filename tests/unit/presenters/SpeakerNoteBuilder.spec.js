@@ -86,6 +86,11 @@ content for section2`
       expect(builder.removeTagWithContent(article)).toBe('# Section1\n\n## Section2')
     })
 
+    test('#replaceImage', () => {
+      const article = '![Image1](https://example.com/image1.png)\n![Image2](https://example.com/image2.png)'
+      expect(builder.replaceImage(article)).toBe('[Image Image1]\n[Image Image2]')
+    })
+
     test('#replaceImageTag', () => {
       const imageTag = '<img width="120" alt="screenshot.png" src="https://misoca-esa-io-custom-bucket.s3-ap-northeast-1.amazonaws.com/uploads/production/attachments/xxx.png">'
       const article = `# Section\n${imageTag}\nImageImage\n${imageTag}`
