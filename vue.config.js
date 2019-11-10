@@ -1,6 +1,7 @@
 const path = require('path')
 
 module.exports = {
+  publicPath: process.env.NODE_ENV === 'production' ? '/nippou-player/' : '',
   pwa: {
     name: 'Nippou Player',
     themeColor: '#0a9b94',
