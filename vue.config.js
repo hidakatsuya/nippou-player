@@ -4,7 +4,7 @@ module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? '/nippou-player/' : '',
   pwa: {
     name: 'Nippou Player',
-    themeColor: '#0a9b94',
+    themeColor: '#000000',
     iconPaths: {
       favicon32: 'img/icons/favicon-32x32.png',
       favicon16: 'img/icons/favicon-16x16.png',
