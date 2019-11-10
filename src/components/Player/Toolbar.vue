@@ -38,20 +38,22 @@
           <span class="icon icon-pause" />
         </button>
       </div>
-      <router-link
-        :to="{ name: 'setting' }"
-        tag="button"
-        class="btn btn-default"
-      >
-        <span class="icon icon-cog" />
-      </router-link>
-      <router-link
-        :to="{ name: 'about' }"
-        tag="button"
-        class="btn btn-default pull-right"
-      >
-        <span class="icon icon-info-circled" />
-      </router-link>
+      <div class="btn-group">
+        <router-link
+          :to="{ name: 'setting' }"
+          tag="button"
+          class="btn btn-default"
+        >
+          <span class="icon icon-cog" />
+        </router-link>
+        <router-link
+          :to="{ name: 'about' }"
+          tag="button"
+          class="btn btn-default pull-right"
+        >
+          <span class="icon icon-info-circled" />
+        </router-link>
+      </div>
     </div>
   </header>
 </template>
@@ -88,4 +90,7 @@ export default {
 </script>
 
 <style scoped>
+.toolbar-actions {
+  text-align: center;
+}
 </style>
