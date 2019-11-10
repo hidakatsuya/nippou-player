@@ -10,6 +10,9 @@ module.exports = {
   rules: {
     semi: ['error', 'never']
   },
+  parserOptions: {
+    parser: 'babel-eslint'
+  },
   overrides: [
     {
       files: [
