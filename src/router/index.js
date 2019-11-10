@@ -3,7 +3,8 @@ import VueRouter from 'vue-router'
 
 import Player from 'views/Player/index'
 import Setting from 'views/Setting/index'
-import About from 'views/About/index'
+
+const About = () => import(/* webpackChunkName: "about" */ 'views/About/index')
 
 Vue.use(VueRouter)
 
