@@ -13,6 +13,14 @@
         <div class="app-version">
           {{ version }}
         </div>
+        <div class="app-links">
+          <ExternalLink :href="'https://github.com/hidakatsuya/nippou-player'">
+            <span class="icon icon-github" />
+          </ExternalLink>
+          <ExternalLink :href="'https://twitter.com/hidakatsuya'">
+            <span class="icon icon-twitter" />
+          </ExternalLink>
+        </div>
       </div>
     </div>
   </div>
@@ -20,10 +28,12 @@
 
 <script>
 import Toolbar from './Toolbar'
+import ExternalLink from 'ExternalLink'
 
 export default {
   components: {
-    Toolbar
+    Toolbar,
+    ExternalLink
   },
   computed: {
     version () {
@@ -51,5 +61,11 @@ export default {
   color: #aaa;
   font-size: .9em;
   margin-top: 10px;
+}
+.app-links {
+  margin-top: 5px;
+}
+.app-links a {
+  padding: 0 5px;
 }
 </style>
