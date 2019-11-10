@@ -16,14 +16,6 @@ export default {
       type: String,
       required: true
     }
-  },
-  methods: {
-    onClick (e) {
-      if (process.env.NODE_ENV === 'production') {
-        require('electron').shell.openExternal(this.href)
-        e.preventDefault()
-      }
-    }
   }
 }
 </script>

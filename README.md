@@ -28,7 +28,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/hidaka
 
 ```bash
 $ npm install
-$ npm run serve or electron:serve
+$ npm run serve
 ```
 
 ## Copyright
