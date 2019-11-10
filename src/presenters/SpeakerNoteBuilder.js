@@ -33,6 +33,8 @@ export default class SpeakerNoteBuilder {
 
   formatArticle (article) {
     const formatters = [
+      'removeTagWithContent',
+      'replaceImageTag',
       'removeTable',
       'removeArticleLink',
       'removeUrl',
@@ -53,6 +55,14 @@ export default class SpeakerNoteBuilder {
 
   replaceLinkWithText (article) {
     return article.replace(/(?<!!)\[(.*?)\]\(.*?\)/g, '$1')
+  }
+
+  removeTagWithContent (article) {
+    return article.replace(/<(.+?)>[\s\S]*<\/\1>/g, '').replace(/<.+?\/>/g, '')
+  }
+
+  replaceImageTag (article) {
+    return article.replace(/<img[^>]+?>/g, '[Image]')
   }
 
   removeArticleLink (article) {

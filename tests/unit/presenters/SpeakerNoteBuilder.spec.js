@@ -79,5 +79,16 @@ content for section2`
       const article = '| caption1 | caption2 |\n| --- | --- |\n| content1 | content2 |\n'
       expect(builder.removeTable(article)).toBe('\n\n\n')
     })
+
+    test('#removeTagWithContent', () => {
+      const article = '# Section1\n<Details><Summary>Summary</Summary>\nDetailsDetailsDetails\n</Details>\n## Section2'
+      expect(builder.removeTagWithContent(article)).toBe('# Section1\n\n## Section2')
+    })
+
+    test('#replaceImageTag', () => {
+      const imageTag = '<img width="120" alt="screenshot.png" src="https://misoca-esa-io-custom-bucket.s3-ap-northeast-1.amazonaws.com/uploads/production/attachments/xxx.png">'
+      const article = `# Section\n${imageTag}\nImageImage\n${imageTag}`
+      expect(builder.replaceImageTag(article)).toBe('# Section\n[Image]\nImageImage\n[Image]')
+    })
   })
 })
