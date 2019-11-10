@@ -51,7 +51,7 @@
           tag="button"
           class="btn btn-default pull-right"
         >
-          <span class="icon icon-info-circled" />
+          <span class="icon icon-info" />
         </router-link>
       </div>
     </div>
