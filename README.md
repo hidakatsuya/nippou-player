@@ -32,6 +32,13 @@ $ npm install
 $ npm run serve
 ```
 
+## Todos & Known Issues
+
+- (Issue) Pause does not work in mobile (Confirmed with Android Chrome)
+- Test improvement
+- TypeScript
+- Auto deployment
+
 ## Copyright
 
 2017 &copy; Katsuya HIDAKA. See MIT-LICENSE for further details.
