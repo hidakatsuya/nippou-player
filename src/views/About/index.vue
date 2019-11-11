@@ -67,5 +67,6 @@ export default {
 }
 .app-links a {
   padding: 0 5px;
+  color: #000;
 }
 </style>
