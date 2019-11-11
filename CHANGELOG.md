@@ -1,3 +1,9 @@
+## 1.0.2
+
+### BugFixes
+
+ - Fixed "#" is still not removed in section title
+
 ## 1.0.1
 
 ### BugFixes
