@@ -1,3 +1,9 @@
+## 1.0.1
+
+### BugFixes
+
+ - Fixed "#" in section title are not deleted
+
 ## 1.0.0
 
 ### Breaking Changes
