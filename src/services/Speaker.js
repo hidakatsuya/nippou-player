@@ -1,13 +1,8 @@
 export default class Speaker {
-  static init () {
-    const speaker = new this('a')
-    speaker.speak()
-    window.speechSynthesis.cancel()
-  }
-
-  constructor (text) {
+  constructor (text, synthesis) {
     this.speech = new SpeechSynthesisUtterance(text)
     this.speech.lang = 'ja-JP'
+    this.synthesis = synthesis
   }
 
   set onStart (handler) {
@@ -27,6 +22,6 @@ export default class Speaker {
   }
 
   speak () {
-    window.speechSynthesis.speak(this.speech)
+    this.synthesis.speak(this.speech)
   }
 }

@@ -83,8 +83,6 @@ export default {
   },
   mounted () {
     this.load()
-    // Work around that pause() does not work at first.
-    Speaker.init()
   },
   methods: {
     async load () {
@@ -94,7 +92,7 @@ export default {
     play () {
       this.items.forEach(item => {
         const note = SpeakerNoteBuilder.build(item.nippou, setting.listSectinTitles)
-        const speaker = new Speaker(note)
+        const speaker = new Speaker(note, window.speechSynthesis)
 
         speaker.onStart = () => {
           item.nowPlaying()
