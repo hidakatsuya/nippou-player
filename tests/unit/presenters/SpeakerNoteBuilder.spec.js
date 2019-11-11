@@ -1,6 +1,14 @@
 import SpeakerNoteBuilder from 'presenters/SpeakerNoteBuilder'
 
 describe('SpeakerNoteBuilder', () => {
+  describe('Initializing', () => {
+    const builder = new SpeakerNoteBuilder('title', 'content1 <!-- comment --> content2', [])
+
+    test('article', () => {
+      expect(builder.article).toBe('content1  content2')
+    })
+  })
+
   describe('Building note', () => {
     const builder = new SpeakerNoteBuilder('title', 'content', [])
 

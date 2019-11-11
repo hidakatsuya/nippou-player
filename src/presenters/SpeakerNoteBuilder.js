@@ -7,7 +7,7 @@ export default class SpeakerNoteBuilder {
 
   constructor (title, article, sectionTitles) {
     this.title = title
-    this.article = article
+    this.article = this.initArticle(article)
     this.sectionTitles = sectionTitles
   }
 
@@ -31,6 +31,10 @@ export default class SpeakerNoteBuilder {
     return this.article.split(/\n(?=#+? [^#])/)
   }
 
+  initArticle (article) {
+    return article.replace(/<!--[\s\S]*?-->/, '')
+  }
+
   formatArticle (article) {
     const formatters = [
       'formatReadableTitle',
@@ -47,7 +51,7 @@ export default class SpeakerNoteBuilder {
   }
 
   formatReadableTitle (article) {
-    return article.replace(/#+? (.+?)(?=\n)/g, '\n「$1」\n')
+    return article.replace(/^#+? (.+?)$/mg, '\n「$1」\n')
   }
 
   replaceImage (article) {
