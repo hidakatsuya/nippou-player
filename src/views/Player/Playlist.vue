@@ -11,11 +11,11 @@
         <td class="item-status">
           <span
             v-if="item.playing"
-            class="icon icon-sound"
+            class="icon icon-play"
           />
           <span
             v-if="item.paused"
-            class="icon icon-mute"
+            class="icon icon-pause"
           />
         </td>
         <td class="item-title">
@@ -58,9 +58,9 @@ export default {
 }
 .item-title {
   padding: 2px 0;
+  max-width: 0;
 }
 .item-title a {
-  width: 245px;
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
