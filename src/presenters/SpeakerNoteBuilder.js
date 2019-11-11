@@ -33,6 +33,7 @@ export default class SpeakerNoteBuilder {
 
   formatArticle (article) {
     const formatters = [
+      'formatReadableTitle',
       'removeTagWithContent',
       'replaceImageTag',
       'removeTable',

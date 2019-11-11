@@ -47,7 +47,7 @@ content for section2`
 
     test('#formatArticle', () => {
       const article = '# section\n\n[aaa](https://www.example.com)'
-      expect(builder.formatArticle(article)).toBe('# section\n\naaa')
+      expect(builder.formatArticle(article)).toBe('\n「section」\n\n\naaa')
     })
 
     test('#formatReadableTitle', () => {
