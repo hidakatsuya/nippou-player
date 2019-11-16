@@ -13,9 +13,9 @@ A client for playing NIPPOU in [esa.io](https://esa.io).
 ### Installing
 
 1. Go to https://hidakatsuya.github.io/nippou-player/
-2. Install by performing "Add to Home or Application"
+2. Install to peform "Add to Home/Application"
 
-I recommend changing the size to a vertically long size.
+I recommend you change the application size to vertically long size.
 
 ### Setup
 
