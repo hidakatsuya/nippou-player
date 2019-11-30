@@ -44,6 +44,7 @@ export default class SpeakerNoteBuilder {
       'removeArticleLink',
       'removeUrl',
       'removeEmoji',
+      'removeCode',
       'replaceImage',
       'replaceLinkWithText'
     ]
@@ -72,6 +73,10 @@ export default class SpeakerNoteBuilder {
 
   removeArticleLink (article) {
     return article.replace(/\[#(\d+): .+\/([^/]+)\]\(.+?\)/g, '')
+  }
+
+  removeCode (article) {
+    return article.replace(/```[\s\S]*?```/g, '')
   }
 
   removeUrl (article) {

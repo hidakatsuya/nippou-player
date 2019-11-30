@@ -89,6 +89,11 @@ content for section2`
       expect(builder.removeTable(article)).toBe('\n\n\n')
     })
 
+    test('#removeCode', () => {
+      const article = '# section1\n```\ncode;code;\n```\n# section2'
+      expect(builder.removeCode(article)).toBe('# section1\n\n# section2')
+    })
+
     test('#removeTagWithContent', () => {
       const article = '# Section1\n<Details><Summary>Summary</Summary>\nDetailsDetailsDetails\n</Details>\n## Section2'
       expect(builder.removeTagWithContent(article)).toBe('# Section1\n\n## Section2')
