@@ -37,7 +37,7 @@ export default {
   },
   computed: {
     version () {
-      return '1.0.2'
+      return '1.1.0'
     },
     productName () {
       return 'Nippou Player'

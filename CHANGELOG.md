@@ -1,3 +1,13 @@
+## 1.1.0
+
+#### Breaking Changes
+
+ - Do not speak code-blocks
+
+#### Enhancements
+
+ - Add operations to play the next/previous
+
 ## 1.0.2
 
 ### BugFixes
