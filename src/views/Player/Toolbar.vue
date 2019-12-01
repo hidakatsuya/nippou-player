@@ -21,30 +21,35 @@
       <div class="btn-group">
         <button
           class="btn btn-default"
+          :disabled="disableOperations"
           @click="playPrev"
         >
           <span class="icon icon-fast-backward" />
         </button>
         <button
           class="btn btn-default"
+          :disabled="disableOperations"
           @click="play"
         >
           <span class="icon icon-play" />
         </button>
         <button
           class="btn btn-default"
+          :disabled="disableOperations"
           @click="playNext"
         >
           <span class="icon icon-fast-forward" />
         </button>
         <button
           class="btn btn-default"
+          :disabled="disableOperations"
           @click="stop"
         >
           <span class="icon icon-stop" />
         </button>
         <button
           class="btn btn-default"
+          :disabled="disableOperations"
           @click="pause"
         >
           <span class="icon icon-pause" />
@@ -73,6 +78,10 @@
 <script>
 export default {
   props: {
+    disableOperations: {
+      type: Boolean,
+      default: true
+    },
     title: {
       type: String,
       required: true

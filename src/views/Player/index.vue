@@ -9,6 +9,7 @@
       :play-prev="playPrev"
       :pause="pause"
       :stop="stop"
+      :disable-operations="items.length == 0"
     />
     <div class="window-content">
       <transition
