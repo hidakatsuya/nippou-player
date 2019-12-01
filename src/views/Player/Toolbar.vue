@@ -122,4 +122,7 @@ export default {
 .toolbar-actions {
   text-align: center;
 }
+.btn:disabled .icon {
+  color: #bbbbbb;
+}
 </style>
