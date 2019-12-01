@@ -36,8 +36,6 @@ $ npm run serve
 
 ## Todos & Known Issues
 
-- Bug
-  - Pause does not work in mobile (Confirmed with Android Chrome)
 - Enhancement
   - Speech improvement using [SSML](https://cloud.google.com/text-to-speech/docs/ssml?hl=ja)
   - Support remote speech API such as [IBM Watson Text to Speech](https://www.ibm.com/watson/jp-ja/developercloud/text-to-speech.html)
