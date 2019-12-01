@@ -4,7 +4,9 @@
       :title="formattedDate"
       :next-day="nextDay"
       :prev-day="prevDay"
-      :play="activeItem ? resume : play"
+      :play="playOrResume"
+      :play-next="playNext"
+      :play-prev="playPrev"
       :pause="pause"
       :stop="stop"
     />
@@ -59,12 +61,45 @@ export default {
       loader: new NippouLoader(setting),
       date: moment().subtract(1, 'days').toDate(),
       items: [],
-      activeItem: null
+      queueIndex: {
+        current: null,
+        next: null
+      }
     }
   },
   computed: {
     formattedDate () {
       return moment(this.date).format('YYYY-MM-DD')
+    },
+    isPlaying () {
+      return this.currentItem && this.currentItem.playing
+    },
+    isPaused () {
+      return this.currentItem && this.currentItem.paused
+    },
+    nextItemIndex () {
+      if (this.queueIndex.current === null) {
+        return 0
+      } else if (this.queueIndex.current === this.lastItemIndex) {
+        return null
+      } else {
+        return this.queueIndex.current + 1
+      }
+    },
+    prevItemIndex () {
+      if (this.queueIndex.current === null) {
+        return 0
+      } else if (this.queueIndex.current === 0) {
+        return 0
+      } else {
+        return this.queueIndex.current - 1
+      }
+    },
+    lastItemIndex () {
+      return this.items.length
+    },
+    currentItem () {
+      return this.items[this.queueIndex.current]
     }
   },
   watch: {
@@ -89,29 +124,30 @@ export default {
       const nippous = await this.loader.load(this.date)
       this.items = nippous.map(nippou => new PlaylistItem(nippou))
     },
-    play () {
-      this.items.forEach(item => {
-        const note = SpeakerNoteBuilder.build(item.nippou, setting.listSectinTitles)
-        const speaker = new Speaker(note, window.speechSynthesis)
-
-        speaker.onStart = () => {
-          item.nowPlaying()
-          this.activeItem = item
-        }
-        speaker.onEnd = () => {
-          item.nowPending()
-          this.activeItem = null
-        }
-        speaker.onResume = () => item.nowPlaying()
-        speaker.onPause = () => item.nowPaused()
-
-        speaker.speak()
-      })
+    playOrResume () {
+      if (this.isPaused) {
+        this.resume()
+      } else if (!this.isPlaying) {
+        this.startPlayAtFirst()
+      }
+    },
+    playNext () {
+      // When it performs canceling, playback automatically starts at queueIndex.next
+      window.speechSynthesis.cancel()
+    },
+    playPrev () {
+      // When it performs canceling, playback automatically starts at queueIndex.next
+      this.queueIndex.next = this.prevItemIndex
+      window.speechSynthesis.cancel()
     },
     resume () {
       window.speechSynthesis.resume()
     },
     stop () {
+      this.queueIndex = {
+        current: null,
+        next: null
+      }
       window.speechSynthesis.cancel()
     },
     pause () {
@@ -124,6 +160,33 @@ export default {
     prevDay () {
       this.stop()
       this.date = moment(this.date).subtract(1, 'days').toDate()
+    },
+
+    // Internals
+    startPlayAtFirst () {
+      this.queueIndex.next = 0
+      this.startPlaybackAtNextQueueIndex()
+    },
+    startPlaybackAtNextQueueIndex () {
+      // Exit if there is not next playback
+      if (this.queueIndex.next === null) {
+        return
+      }
+      this.queueIndex.current = this.queueIndex.next
+      this.queueIndex.next = this.nextItemIndex
+
+      const item = this.currentItem
+      const note = SpeakerNoteBuilder.build(item.nippou, setting.listSectinTitles)
+      const speaker = new Speaker(note, window.speechSynthesis)
+
+      speaker.onStart = () => item.nowPlaying()
+      speaker.onResume = () => item.nowPlaying()
+      speaker.onPause = () => item.nowPaused()
+      speaker.onEnd = () => {
+        item.nowPending()
+        this.startPlaybackAtNextQueueIndex()
+      }
+      speaker.speak()
     }
   }
 }

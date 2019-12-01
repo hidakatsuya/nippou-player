@@ -21,9 +21,21 @@
       <div class="btn-group">
         <button
           class="btn btn-default"
+          @click="playPrev"
+        >
+          <span class="icon icon-fast-backward" />
+        </button>
+        <button
+          class="btn btn-default"
           @click="play"
         >
           <span class="icon icon-play" />
+        </button>
+        <button
+          class="btn btn-default"
+          @click="playNext"
+        >
+          <span class="icon icon-fast-forward" />
         </button>
         <button
           class="btn btn-default"
@@ -66,6 +78,14 @@ export default {
       required: true
     },
     play: {
+      type: Function,
+      required: true
+    },
+    playNext: {
+      type: Function,
+      required: true
+    },
+    playPrev: {
       type: Function,
       required: true
     },
