@@ -129,7 +129,7 @@ export default {
       if (this.isPaused) {
         this.resume()
       } else if (!this.isPlaying) {
-        this.startPlayAtFirst()
+        this.startPlaybackAtFirst()
       }
     },
     playNext () {
@@ -164,7 +164,7 @@ export default {
     },
 
     // Internals
-    startPlayAtFirst () {
+    startPlaybackAtFirst () {
       this.queueIndex.next = 0
       this.startPlaybackAtNextQueueIndex()
     },
