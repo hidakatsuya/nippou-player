@@ -1,5 +1,8 @@
 <template>
   <header class="toolbar toolbar-header">
+    <Message class="info">
+      2021-9-17 をもって Nippou Player の提供を終了します。
+    </Message>
     <h1 class="title">
       Setting
     </h1>
@@ -16,9 +19,17 @@
 </template>
 
 <script>
+import Message from 'Message'
+
 export default {
+  components: {
+    Message
+  }
 }
 </script>
 
 <style scoped>
+.info {
+  color: red;
+}
 </style>

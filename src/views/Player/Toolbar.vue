@@ -1,5 +1,8 @@
 <template>
   <header class="toolbar toolbar-header">
+    <Message class="info">
+      2021-9-17 をもって Nippou Player の提供を終了します。
+    </Message>
     <h1 class="title">
       {{ title }}
     </h1>
@@ -76,7 +79,12 @@
 </template>
 
 <script>
+import Message from 'Message'
+
 export default {
+  components: {
+    Message
+  },
   props: {
     disableOperations: {
       type: Boolean,
@@ -124,5 +132,8 @@ export default {
 }
 .btn:disabled .icon {
   color: #bbbbbb;
+}
+.info {
+  color: red;
 }
 </style>
