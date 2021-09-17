@@ -12,7 +12,7 @@ A client for playing NIPPOU in [esa.io](https://esa.io).
 
 ### Installing
 
-1. Go to https://hidakatsuya.github.io/nippou-player/
+1. ~~Go to https://hidakatsuya.github.io/nippou-player/~~ currently not available
 2. Install to peform "Add to Home/Application"
 
 I recommend you change the application size to vertically long size.
@@ -33,6 +33,8 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/hidaka
 $ npm install
 $ npm run serve
 ```
+
+Visit http://localhost:4000.
 
 ## Todos & Known Issues
 
